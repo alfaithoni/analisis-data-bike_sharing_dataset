@@ -25,7 +25,7 @@ df5 = pd.read_csv(os.path.join(current_dir,"hour.csv"))
 
 
 # Visualisasi data
-tab1, tab2, tab3, tab4,= st.tabs(["Hasil Analisis 1", "Hasil Analisis 2", "Hasil Analisis 3", "Hasil Analisis 4"])
+tab1, tab2, tab3, tab4, tab5= st.tabs(["Hasil Analisis 1", "Hasil Analisis 2", "Hasil Analisis 3", "Hasil Analisis 4", "Conclusion"])
 
 with tab1:
     st.write("Musim apa penyewaan sepeda dilakukan paling banyak dan paling sedikit?")
@@ -74,6 +74,7 @@ with tab3:
     plt.show()
     st.pyplot(plt)
 
+plt.cla()
 with tab4:
     st.write("Pada jam berapa jumlah penyewaan sepeda tertinggi terjadi?")
     st.write("Berdasarkan visualisasi data di bawah dapat disimpulkan bahwa penyewaan sepeda tertinggi terjadi pada jam 17 untuk setiap musim")
@@ -88,4 +89,15 @@ with tab4:
     plt.grid(True)
     plt.xticks(range(0, 24))
     plt.show()
+
     st.pyplot(plt)
+
+with tab5:
+    st.subheader("Conclusion")
+    st.write('''
+- Analisis 1 : Berdasarkan hasil visualisasi pada tab "Hasil Analisis 1", dapat disimpulkan bahwa penyewaan sepeda paling banyak terjadi pada season Fall dan paling sedikit pada season springer
+- Analisis 2 : Berdasarkan visualisasi data pada tab "Hasil Analisis 2" dapat disimpulkan penyewaan sepeda paling banyak terjadi pada 15 September 2012, yaitu 8714 sepeda. Berdasarkan visualisasi data pada tab "Hasil Analisis 2" dapat disimpulkan penyewaan sepeda paling sedikit terjadi pada 29 Oktober 2012, yaitu 22 sepeda
+- Analisis 3 : Berdasarkan visualisasi data pada tab "Hasil Analisis 3", dapat disimpulkan bahwa day_status menentukan banyaknya penyewa sepeda. Penyewaan sepeda lebih banyak terjadi saat workingday"
+- Analisis 4 : Berdasarkan visualisasi data pada tab "Hasil Analisis 4" dapat disimpulkan bahwa penyewaan sepeda tertinggi terjadi pada jam 17 untuk setiap musim"
+'''
+)
